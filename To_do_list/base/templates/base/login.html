@@ -1,0 +1,17 @@
+{% extends 'base/index.html' %}
+
+{% block content %}
+<div class="login-title">
+    <div class="titulo p-4" style="border-radius: 5px 5px 0 0;
+                    background: linear-gradient(90deg, #EEA390 0%, #EB796F 43%, #EB796F 100%);color: white; padding: 5px;font-family: 'Nunito', sans-serif;">
+                        <h1>Login</h1>
+                    </div>
+    <form method="POST" style="max-width: 300px; margin: 0 auto;">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Login" style="background: linear-gradient(90deg, #EEA390 0%, #EB796F 43%, #EB796F 100%); color: #fff; padding: 10px 20px; border: none; cursor: pointer;">
+    </form>
+</div>
+
+<p style="text-align: center; margin-top: 20px;">Don't have an account? <a href="{% url 'register' %}" style="color: #007bff; text-decoration: none;">Register</a></p>
+{% endblock content %}
